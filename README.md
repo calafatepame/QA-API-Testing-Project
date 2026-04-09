@@ -97,7 +97,9 @@ Failures are expected because JSONPlaceholder is a mock API and does not enforce
 • Boundary value analysis  
 • Negative testing  
 
+## ## Automation execution evidence
 
+See Newman execution results in /screenshots folder.
 
 ## What I learned:
 
