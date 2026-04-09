@@ -78,6 +78,19 @@ Summary, Steps, Expected Result, Actual Result and Evidence.
 
 
 
+## Expected vs Actual:
+
+Test case	    Expected	      Actual        	Result
+TC10	         400           	 201	        Fail (API no validation)
+TC11	         400	           201	        Fail (API mock behavior)
+TC13	         400	           201	        Fail (no email validation)
+TC14	         400/422       	 500	        Fail (server error)
+
+
+Failures are expected because JSONPlaceholder is a mock API and does not enforce validations.
+
+
+
 ## Test design techniques used:
 
 • Equivalence partitioning  
