@@ -116,6 +116,14 @@ Some tests are expected to fail because JSONPlaceholder is a mock API and does n
 
 The pipeline shows failures intentionally to demonstrate negative testing scenarios and defect detection.
 
+## Test Execution Evidence
+
+Newman execution summary:
+
+(evidence/newman-summary-report.png)
+
+![Newman Report](evidence/newman-summary-report.png)
+
 
 ## Observations:
 
