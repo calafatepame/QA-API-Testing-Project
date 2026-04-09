@@ -110,6 +110,11 @@ See Newman execution results in /screenshots folder.
 • How to identify negative scenarios  
 • Importance of validation in APIs  
 
+## CI Execution Results
+
+Some tests are expected to fail because JSONPlaceholder is a mock API and does not validate input data.
+
+The pipeline shows failures intentionally to demonstrate negative testing scenarios and defect detection.
 
 
 ## Observations:
