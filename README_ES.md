@@ -2,18 +2,18 @@
 
 ## Descripción General
 
-Proyecto práctico de Testing de APIs orientado a validar funcionalidades, manejo de errores y calidad de respuestas sobre el endpoint público:
-https://jsonplaceholder.typicode.com/users
+Proyecto práctico de Testing de APIs orientado a validar funcionalidades, manejo de errores y calidad de respuestas sobre el endpoint público: https://jsonplaceholder.typicode.com/users
+
 El objetivo principal fue aplicar buenas prácticas de QA Testing utilizando Postman, Newman y criterios de diseño de pruebas funcionales y negativas.
 
 ## Objetivos del Proyecto
 
-Validar comportamiento funcional de endpoints REST.
-Diseñar casos de prueba positivos y negativos.
-Detectar defectos funcionales.
-Automatizar validaciones básicas.
-Generar evidencia de ejecución profesional.
-Simular flujo real de trabajo QA.
+• Validar comportamiento funcional de endpoints REST.
+• Diseñar casos de prueba positivos y negativos.
+• Detectar defectos funcionales.
+• Automatizar validaciones básicas.
+• Generar evidencia de ejecución profesional.
+• Simular flujo real de trabajo QA.
 
 ## Herramientas Utilizadas
 
