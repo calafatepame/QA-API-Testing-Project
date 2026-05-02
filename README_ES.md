@@ -1,4 +1,4 @@
-# QA API Testing Project – Users Endpoint\
+# QA API Testing Project – Users Endpoint
 
 ## Descripción General
 
