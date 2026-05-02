@@ -9,8 +9,11 @@ El objetivo principal fue aplicar buenas prácticas de QA Testing utilizando Pos
 ## Objetivos del Proyecto
 
 • Validar comportamiento funcional de endpoints REST.
+
 • Diseñar casos de prueba positivos y negativos.
+
 • Detectar defectos funcionales.
+
 • Automatizar validaciones básicas.
 • Generar evidencia de ejecución profesional.
 • Simular flujo real de trabajo QA.
