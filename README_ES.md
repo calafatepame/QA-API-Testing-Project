@@ -42,28 +42,28 @@ Se realizaron validaciones sobre:
 
 ## ID                      Caso de Prueba
 
-TC01                  Obtener todos los usuarios
-TC02                  Obtener usuario por ID válido
-TC03                  Obtener usuario inexistente
-TC04                  ID con formato inválido
-TC05                  Valor límite ID = 0
-TC06                  ID negativo
-TC07                  ID decimal
-TC08                  ID vacío
-TC09                  Crear usuario con datos válidos
-TC10                  Email inválido
-TC11                  Body vacío
-TC12                  Tipos de datos inválidos
+-TC01                  Obtener todos los usuarios
+-TC02                  Obtener usuario por ID válido
+-TC03                  Obtener usuario inexistente
+-TC04                  ID con formato inválido
+-TC05                  Valor límite ID = 0
+-TC06                  ID negativo
+-TC07                  ID decimal
+-TC08                  ID vacío
+-TC09                  Crear usuario con datos válidos
+-TC10                  Email inválido
+-TC11                  Body vacío
+-TC12                  Tipos de datos inválidos
 
 
 ## Defectos Detectados
 
 ## ID                        Descripción
 
-BUG-01                 La API acepta formato de email inválido
-BUG-02                 La API acepta body vacío
-BUG-03                 La API acepta tipos de datos incorrectos
-BUG-04                 JSON malformado devuelve éxito en lugar de error
+-BUG-01                 La API acepta formato de email inválido
+-BUG-02                 La API acepta body vacío
+-BUG-03                 La API acepta tipos de datos incorrectos
+-BUG-04                 JSON malformado devuelve éxito en lugar de error
 
 Nota: Algunos comportamientos son esperables al tratarse de una Mock API.
 
@@ -83,8 +83,8 @@ Validaciones automáticas incluidas:
 
 El proyecto incluye evidencia de ejecución automática con Newman en carpeta:
 
-/evidence
-/screenshots
+- /evidence
+- /screenshots
 
 
 ## Técnicas de Testing Aplicadas
