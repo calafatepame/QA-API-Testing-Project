@@ -2,25 +2,29 @@
 
 ## Descripción General
 
-Proyecto práctico de Testing de APIs orientado a validar funcionalidades, manejo de errores y calidad de respuestas sobre el endpoint público: https://jsonplaceholder.typicode.com/users
+Proyecto práctico de Testing de APIs orientado a validar funcionalidades, manejo de errores y calidad de respuestas sobre el endpoint público: 
 
-El objetivo principal fue aplicar buenas prácticas de QA Testing utilizando Postman, Newman y criterios de diseño de pruebas funcionales y negativas.
+https://jsonplaceholder.typicode.com/users
+
+El objetivo principal fue aplicar buenas prácticas de QA Testing utilizando Postman, Newman, Jira, GitHub y criterios de diseño de pruebas funcionales y negativas.
 
 ## Objetivos del Proyecto
 
-- Validar comportamiento funcional de endpoints REST.
-- Diseñar casos de prueba positivos y negativos.
+- Validar el comportamiento funcional de endpoints REST.
+- Diseñar y ejecutar casos de prueba positivos y negativos.
 - Detectar defectos funcionales.
-- Automatizar validaciones básicas.
+- Automatizar validaciones básicas con Postman Tests.
+- Ejecutar la colección desde línea de comandos con Newman.
 - Generar evidencia de ejecución profesional.
-- Simular flujo real de trabajo QA.
+- Simular un flujo real de trabajo QA.
 
 ## Herramientas Utilizadas
 
 - Postman
 - Newman
 - GitHub
-- Jira (reporte de bugs)
+- GitHub Actions
+- Jira
 - JSONPlaceholder API
 
 ## Alcance de Pruebas
@@ -42,18 +46,22 @@ Se realizaron validaciones sobre:
 
 ## ID                      Caso de Prueba
 
--TC01                  Obtener todos los usuarios
--TC02                  Obtener usuario por ID válido
--TC03                  Obtener usuario inexistente
--TC04                  ID con formato inválido
--TC05                  Valor límite ID = 0
--TC06                  ID negativo
--TC07                  ID decimal
--TC08                  ID vacío
--TC09                  Crear usuario con datos válidos
--TC10                  Email inválido
--TC11                  Body vacío
--TC12                  Tipos de datos inválidos
+- TC01   Obtener todos los usuarios 
+- TC02   Obtener usuario por ID válido 
+- TC03   Obtener usuario inexistente 
+- TC04   Obtener usuario con formato de ID inválido 
+- TC05   Obtener usuario con valor límite ID = 0 
+- TC06   Obtener usuario con ID negativo 
+- TC07   Obtener usuario con ID decimal 
+- TC08   Obtener usuarios sin parámetro ID 
+- TC09   Crear usuario con datos válidos 
+- TC10   Crear usuario sin email 
+- TC11   Crear usuario con body vacío 
+- TC12   Crear usuario con tipos de datos inválidos 
+- TC13   Crear usuario con formato de email inválido 
+- TC14   Crear usuario con body JSON mal formado 
+- TC15   Crear usuario con campos requeridos vacíos 
+- TC16   Crear usuario con valor de nombre muy largo 
 
 
 ## Defectos Detectados
@@ -63,7 +71,8 @@ Se realizaron validaciones sobre:
 -BUG-01                 La API acepta formato de email inválido
 -BUG-02                 La API acepta body vacío
 -BUG-03                 La API acepta tipos de datos incorrectos
--BUG-04                 JSON malformado devuelve éxito en lugar de error
+-BUG-04                 La API acepta formato de email inválido
+-BUG-05                 La API devuelve 500 en lugar de 400 Bad Request cuando se envía JSON mal formado 
 
 Nota: Algunos comportamientos son esperables al tratarse de una Mock API.
 
@@ -77,7 +86,16 @@ Validaciones automáticas incluidas:
 - Tiempo de respuesta
 - Campos requeridos
 - Tipo de dato
+- Estructura de respuesta
 - Respuesta no vacía
+
+## Ejecución Local con Newman
+
+Para ejecutar la colección desde la terminal:
+
+```bash
+newman run "collection/Users API Testing.postman_collection.json"
+
 
 ## Evidencia de Ejecución
 
