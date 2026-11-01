@@ -1,11 +1,11 @@
 {
   "info": {
-    "_postman_id": "b5bb985f-f087-4fd2-bb72-23be51461bb9",
+    "_postman_id": "fb27d48d-457f-433f-aa69-2f475aa05ff3",
     "name": "Users API Testing",
     "description": "# **Proyecto de Testing de APIs – Endpoint Users**\n\n### **Descripción:**\n\nEste proyecto contiene pruebas de API realizadas con Postman sobre el endpoint público:  \n[https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)\n\nEl objetivo es validar el comportamiento de la API utilizando pruebas funcionales y técnicas de testing negativo.\n\n### **Alcance de pruebas:**\n\nSe realizaron las siguientes validaciones:\n\n- Validación de códigos de estado (status code)\n    \n- Validación de tiempos de respuesta\n    \n- Validación de estructura JSON\n    \n- Validación de tipos de datos\n    \n- Pruebas negativas\n    \n- Pruebas con datos inválidos\n    \n- Pruebas sobre recursos inexistentes\n    \n\n#### **Casos de prueba incluidos:**\n\nTC01 – Obtener todos los usuarios  \nTC02 – Obtener usuario por ID válido  \nTC03 – Obtener usuario inexistente  \nTC04 – ID con formato inválido  \nTC05 – Valor límite (ID = 0)  \nTC06 – ID negativo  \nTC07 – ID decimal  \nTC08 – ID vacío\n\n### **Herramientas utilizadas:**\n\n- Postman\n    \n- API JSONPlaceholder\n    \n\n### **Enfoque de testing:**\n\nLas pruebas fueron ejecutadas manualmente y automatizadas mediante scripts en Postman.\n\nCada request incluye validaciones automáticas sobre:\n\n- Códigos de estado\n    \n- Estructura de la respuesta\n    \n- Campos obligatorios\n    \n- Tipos de datos\n    \n\n### **Observaciones:**\n\nLa API devuelve la misma respuesta para:\n\n- ID con formato inválido\n    \n- ID inexistente\n    \n\nEsto puede dificultar la diferenciación de errores en escenarios reales.\n\n### Autor:\n\nProyecto práctico de QA realizado como parte del aprendizaje en API Testing.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "52379920",
-    "_collection_link": "https://go.postman.co/collection/52379920-b5bb985f-f087-4fd2-bb72-23be51461bb9?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/52379920-fb27d48d-457f-433f-aa69-2f475aa05ff3?source=collection_link"
   },
   "item": [
     {
@@ -405,85 +405,8 @@
       ]
     },
     {
-      "name": "POST_Users",
+      "name": "POST_Users_Exploratory",
       "item": [
-        {
-          "name": "TC09_CreateUser_ValidData",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  "pm.test(\"Status code is 201\", function () {",
-                  "pm.response.to.have.status(201);",
-                  "});",
-                  "",
-                  "let jsonData = pm.response.json();",
-                  "",
-                  "pm.test(\"Name is correct\", function () {",
-                  "pm.expect(jsonData.name).to.eql(\"Test User\");",
-                  "});",
-                  "",
-                  "pm.test(\"Email exists\", function () {",
-                  "pm.expect(jsonData.email).to.exist;",
-                  "});",
-                  "",
-                  "pm.test(\"ID generated\", function () {",
-                  "pm.expect(jsonData.id).to.exist;",
-                  "});",
-                  "",
-                  "pm.test(\"ID is number\", function () {",
-                  "    pm.expect(jsonData.id).to.be.a(\"number\");",
-                  "});",
-                  "",
-                  "pm.test(\"Email contains @\", function () {",
-                  "    pm.expect(jsonData.email).to.include(\"@\");",
-                  "});",
-                  "",
-                  "pm.test(\"Response time under 500ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
-                  "});"
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\"name\": \"Test User\",\n\"email\": \"test@test.com\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "https://jsonplaceholder.typicode.com/users/",
-              "protocol": "https",
-              "host": [
-                "jsonplaceholder",
-                "typicode",
-                "com"
-              ],
-              "path": [
-                "users",
-                ""
-              ]
-            }
-          },
-          "response": []
-        },
         {
           "name": "TC10_CreateUser_MissingEmail",
           "event": [
@@ -878,6 +801,88 @@
             "body": {
               "mode": "raw",
               "raw": "{\n\"name\":\"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n\"email\":\"test@test.com\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users/",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "POST_Users_CI",
+      "item": [
+        {
+          "name": "TC09_CreateUser_ValidData",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "let jsonData = pm.response.json();",
+                  "",
+                  "pm.test(\"Name is correct\", function () {",
+                  "pm.expect(jsonData.name).to.eql(\"Test User\");",
+                  "});",
+                  "",
+                  "pm.test(\"Email exists\", function () {",
+                  "pm.expect(jsonData.email).to.exist;",
+                  "});",
+                  "",
+                  "pm.test(\"ID generated\", function () {",
+                  "pm.expect(jsonData.id).to.exist;",
+                  "});",
+                  "",
+                  "pm.test(\"ID is number\", function () {",
+                  "    pm.expect(jsonData.id).to.be.a(\"number\");",
+                  "});",
+                  "",
+                  "pm.test(\"Email contains @\", function () {",
+                  "    pm.expect(jsonData.email).to.include(\"@\");",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"name\": \"Test User\",\n\"email\": \"test@test.com\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
